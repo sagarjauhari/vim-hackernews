@@ -1,5 +1,10 @@
+source plugin/hackernews.vim
+
 describe 'plugin loading'
-  it 'init hackernews.vim successfully'
-    Expect math#round_to_zero(1.2) == 1
+  it 'displays page heading'
+    HackerNews
+    Expect getline(1) == '┌───┐'
+    Expect getline(2) == '│ Y │ Hacker News (news.ycombinator.com)'
+    Expect getline(3) == '└───┘'
   end
 end
